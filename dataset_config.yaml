@@ -1,0 +1,20 @@
+train: mydata/images/train
+val: mydata/images/val
+# Optional: specify additional configuration details
+nc: 7
+names:
+  [
+    "abdominal wall",
+    "colon",
+    "liver",
+    "small intestine",
+    "spleen",
+    "pancreas",
+    "stomach",
+  ]
+
+dataset:
+  path: mydata/annotations
+  annotations: annotations.json
+  images: mydata/images
+  labels: mydata/labels

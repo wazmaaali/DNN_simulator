@@ -1,0 +1,6 @@
+
+MODEL_NAME = ""
+DATATYPE = ""
+CLIENT1 = 1
+CLIENT2 = 2
+SERVER = 3
