@@ -156,7 +156,7 @@ def test(net, testloader = None,pred_results= None,ground_truth=None):
     correct, total, loss = 0, 0, 0.0
     criterion = torch.nn.CrossEntropyLoss()
     # print("YOLO testloader: ",testloader)
-    if Constant.MODEL_NAME=="yolo":
+    if Constant.MODEL_NAME == "yolo":
         print("befo##########: ",pred_results)
         all_predictions = get_allprediciton(pred_results)
         pred_results = [sublist for sublist in pred_results if sublist]
@@ -305,6 +305,7 @@ def get_allprediciton(results):
     i=0
     j=0
     predictions = []
+    # if results
     for result in results:
         i = i+1
         for aa in result:

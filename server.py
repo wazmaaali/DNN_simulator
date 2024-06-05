@@ -50,6 +50,9 @@ def get_eval_fn(model: nn.Module):
     if Constant.MODEL_NAME != 'yolo':
         print("Constant.DATATYPE: ",Constant.DATATYPE)
         train_loader, test_loader = utils.selectDatatype(Constant.DATATYPE)
+    # else:
+    #     pred_result,all_ground_truths = model.collect_all_predictions_and_ground_truths('mydata/images/val', 'mydata/labels/val')
+
 
     def evaluate(
         server_round: int, parameters: NDArrays, config: Dict[str, Scalar]
@@ -58,10 +61,11 @@ def get_eval_fn(model: nn.Module):
             # utils.set_model_params(model,parameters)  # Update model with the latest parameters
             loss, accuracy = utils.test(model, test_loader)
             # _times.append(server_round)
+        # else:
+        #     loss, accuracy = utils.test(model,pred_result,all_ground_truths)
+            return loss, {"accuracy": accuracy}
         else:
-            loss, accuracy = utils.test(model)
-        return loss, {"accuracy": accuracy}
-
+            return None
 
     return evaluate
 
