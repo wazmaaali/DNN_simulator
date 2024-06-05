@@ -15,6 +15,7 @@ from tqdm import tqdm
 from CNNModel import CNNModel
 from YOLOModel import YOLOModel
 import Constants as Constant
+import VideoFrameDataset as VideoFrameDataset
 from YOLOModel import YOLOLoss
 import os
 import cv2

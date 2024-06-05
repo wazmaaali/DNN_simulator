@@ -41,7 +41,7 @@ if __name__ == "__main__":
     Constant.DATATYPE = args.data_type
     Constant.MODEL_NAME =args.model_type
     
-    if(args.model_type != "yolo")::
+    if(args.model_type != "yolo"):
         train_loader, test_loader = utils.selectDatatype(args.data_type)
 
      # Define Flower client
